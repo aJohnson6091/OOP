@@ -26,11 +26,11 @@ public class Signup extends HttpServlet{
             }else{
                Main.usernames.add(name);
                Main.users.add(user);
-               pw.printf("Account created");
+               pw.printf("Account created\n");
                pw.printf("Your username is: "+  name);
-               pw.printf("Your password is: "+  password);
-               pw.printf("Your realbane is: "+  realName);
-               pw.printf("This seems safe.");
+               pw.printf("\nYour password is: "+  password);
+               pw.printf("\nYour realname is: "+  realName);
+               pw.printf("\nThis seems safe.");
                
             }
         }

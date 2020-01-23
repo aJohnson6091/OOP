@@ -19,17 +19,18 @@ public class Login extends HttpServlet
             pw.printf("No passowrd provided");
         } else {
             for(User user: Main.users){
-                if(name == user.name && password == user.password){
+                if(name.equals(user.name) && password.equals(user.password)){
                     flag= user;                   
                 }  
             }
             if(flag == null){
-                pw.printf("Bad passowrd provided");
+                pw.printf("\nBad password provided");
             }else{
                 var sess = req.getSession();
                 sess.setAttribute("name", flag.name );
+                sess.setAttribute("realname", flag.realName);
                 pw.printf("UserName: "+flag.name);
-                pw.printf("Real Name: "+flag.realName);
+                pw.printf("\nReal Name: "+flag.realName);
             }
             
         }
